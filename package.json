@@ -1,0 +1,11 @@
+{
+  "name": "ipfs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:x": "export $(cat .env | xargs) && bash ./scripts/buildx.sh"
+  },
+  "author": "",
+  "license": "ISC"
+}

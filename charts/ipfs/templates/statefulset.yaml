@@ -9,7 +9,7 @@ metadata:
     release: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.replicaCount }}
-  serviceName: {{ template "ipfs.servicename" . }}
+  serviceName: {{ template "ipfs.name" . }}
   selector:
     matchLabels:
       app: {{ template "ipfs.name" . }}
@@ -29,7 +29,7 @@ spec:
         runAsUser: 1000
       containers:
       - name: {{ .Chart.Name }}
-        image: {{ .Values.image }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         livenessProbe:
           httpGet:
             path: /debug/metrics/prometheus

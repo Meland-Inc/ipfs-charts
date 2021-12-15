@@ -7,9 +7,17 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - port: 5001
+      targetPort: api
       protocol: TCP
       name: http
+    - port: 8080
+      targetPort: gateway
+      protocol: TCP
+      name: gateway
+    - port: 4001
+      targetPort: swarm
+      protocol: TCP
+      name: swarm
   selector:
     {{- include "ipfs.selectorLabels" . | nindent 4 }}

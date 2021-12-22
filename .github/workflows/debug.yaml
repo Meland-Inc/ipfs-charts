@@ -1,9 +1,9 @@
-name: Release Charts
+name: DEBUG Charts
 
 on:
   push:
     branches:
-      - main
+      - chore/github-actions-add-build-charts
 
 jobs:
   release:

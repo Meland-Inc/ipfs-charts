@@ -17,8 +17,8 @@ jobs:
       - name: Publish Helm chart
         uses: Meland-Inc/helm-gh-pages@master
         with:
-          charts_url: https://meland-inc.github.io/charts/
-          repository: charts
+          charts_url: https://meland-inc.github.io/ipfs-charts-repository/
+          repository: ipfs-charts-repository
           branch: gh-pages
           charts_dir: charts
           token: ${{ secrets.BOT_GITHUB_TOKEN }}

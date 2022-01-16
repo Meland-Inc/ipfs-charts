@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "ipfs.fullname" . }}
+  name: {{ .Values.service.name }}
   labels:
     {{- include "ipfs.labels" . | nindent 4 }}
 spec:

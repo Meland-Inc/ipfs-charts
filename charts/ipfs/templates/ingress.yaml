@@ -39,7 +39,7 @@ spec:
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
-    - host: api-ipfs-{{ .host }}
+    - host: api-{{ .host }}
       http:
         paths:
           - path: /
@@ -49,7 +49,7 @@ spec:
                 name: {{ $svcName }}
                 port:
                   number: 5001
-    - host: gateway-ipfs-{{ .host }}
+    - host: gateway-{{ .host }}
       http:
         paths:
           - path: /
@@ -59,7 +59,7 @@ spec:
                 name: {{ $svcName }}
                 port:
                   number: 8080
-    - host: swarm-ipfs-{{ .host }}
+    - host: swarm-{{ .host }}
       http:
         paths:
           - path: /

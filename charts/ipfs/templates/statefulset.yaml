@@ -33,7 +33,7 @@ spec:
               fieldPath: spec.nodeName
         command: ['/bin/sh', '/etc/ipfs-config/init.sh']
         volumeMounts:
-        - name: data
+        - name: ipfs-storage
           mountPath: /data/ipfs
         - name: secrets
           mountPath: /etc/ipfs-secrets
@@ -43,7 +43,7 @@ spec:
         image: ipfs/go-ipfs:v0.4.11@sha256:e977e1560b960933061efc694c937d711ce1a51aa4a5239acfdff01504b11054
         command: ['/bin/sh', '/etc/ipfs-config/peers-kubernetes-refresh.sh']
         volumeMounts:
-        - name: data
+        - name: ipfs-storage
           mountPath: /data/ipfs
         - name: config
           mountPath: /etc/ipfs-config

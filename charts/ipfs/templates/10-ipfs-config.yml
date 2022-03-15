@@ -1,7 +1,6 @@
 kind: ConfigMap
 metadata:
   name: ipfs-config
-  namespace: ipfs
 apiVersion: v1
 data:
   init.sh: |-

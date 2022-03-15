@@ -35,8 +35,6 @@ spec:
         volumeMounts:
         - name: ipfs-storage
           mountPath: /data/ipfs
-        - name: secrets
-          mountPath: /etc/ipfs-secrets
         - name: config
           mountPath: /etc/ipfs-config
       - name: init-peers
@@ -78,9 +76,6 @@ spec:
         - name: ipfs-storage
           emptyDir: {}
   {{- end }}
-        - name: secrets
-          secret:
-            secretName: ipfs
         - name: config
           configMap:
             name: ipfs-config

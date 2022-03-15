@@ -13,9 +13,5 @@ spec:
       targetPort: swarm
       protocol: TCP
       name: swarm
-    - port: 4001
-      targetPort: swarm-udp
-      protocol: UDP
-      name: swarm-udp
   selector:
     {{- include "ipfs.selectorLabels" . | nindent 4 }}
